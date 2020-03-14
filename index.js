@@ -7,14 +7,11 @@ const LaunchRequestHandler = {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
-        // const speechText = 'Welcome to East Croydon Train Times Argha ';
-
         let speechText = workTrain.speechText();
 
         return handlerInput.responseBuilder
             .speak(speechText)
-            .reprompt(speechText)
-            .withSimpleCard('Hello World', speechText)
+            .withSimpleCard('East Croydon to Burgess Hill', speechText)
             .getResponse();
     }
 };
@@ -26,11 +23,11 @@ const HelloWorldIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
     },
     handle(handlerInput) {
-        const speechText = 'Hello World!';
+        let speechText = workTrain.speechText();
 
         return handlerInput.responseBuilder
             .speak(speechText)
-            .withSimpleCard('Hello Argha', speechText)
+            .withSimpleCard('East Croydon to Burgess Hill', speechText)
             .getResponse();
     }
 };
