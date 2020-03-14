@@ -16,6 +16,20 @@ const LaunchRequestHandler = {
     }
 };
 
+const Ecr2VicIntentHandler = {
+    canHandle(handlerInput) {
+        return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+            && handlerInput.requestEnvelope.request.intent.name === 'Ecr2VicIntent';
+    },
+    handle(handlerInput) {
+        let speechText = workTrain.speechText();
+
+        return handlerInput.responseBuilder
+            .speak(speechText)
+            .withSimpleCard('East Croydon to London Victoria', speechText)
+            .getResponse();
+    }
+};
 
 const HelloWorldIntentHandler = {
     canHandle(handlerInput) {
@@ -40,6 +54,7 @@ exports.handler = async function (event, context) {
         skill = Alexa.SkillBuilders.custom()
             .addRequestHandlers(
                 LaunchRequestHandler,
+                Ecr2VicIntentHandler,
                 HelloWorldIntentHandler,
             )
             .create();
