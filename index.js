@@ -19,7 +19,7 @@ const LaunchRequestHandler = {
 const Ecr2VicIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'Ecr2VicIntent';
+            && handlerInput.requestEnvelope.request.intent.name === 'EcrToVicIntent';
     },
     handle(handlerInput) {
         let speechText = workTrain.speechText();

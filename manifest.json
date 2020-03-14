@@ -1,42 +1,50 @@
 {
     "interactionModel": {
-    "languageModel": {
-        "invocationName": "train time",
+        "languageModel": {
+            "invocationName": "my train to work",
             "intents": [
-            {
-                "name": "AMAZON.CancelIntent",
-                "samples": []
-            },
-            {
-                "name": "AMAZON.HelpIntent",
-                "samples": []
-            },
-            {
-                "name": "AMAZON.StopIntent",
-                "samples": []
-            },
-            {
-                "name": "HelloWorldIntent",
-                "slots": [
-                    {
-                        "name": "open",
-                        "type": "AMAZON.Actor"
-                    }
-                ],
-                "samples": [
-                    "when",
-                    "next train",
-                    "train times",
-                    "times",
-                    "open"
-                ]
-            },
-            {
-                "name": "AMAZON.NavigateHomeIntent",
-                "samples": []
-            }
-        ],
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloWorldIntent",
+                    "slots": [],
+                    "samples": [
+                        "when",
+                        "next train",
+                        "train times",
+                        "times",
+                        "open"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "EcrToVicIntent",
+                    "slots": [],
+                    "samples": [
+                        "next train to london victoria",
+                        "next train to victoria",
+                        "vic",
+                        "east croydon to london victoria",
+                        "london victoria",
+                        "to victoria",
+                        "victoria"
+                    ]
+                }
+            ],
             "types": []
+        }
     }
-}
 }
