@@ -1,0 +1,24 @@
+{
+  "name": "alexa-train-times-alexa-bug",
+  "version": "1.0.0",
+  "description": "Alexa Skill to tell train departing from East Croydon for Burgess Hill",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arghasarkar/alexa-train-times-alexa-bug.git"
+  },
+  "author": "Argha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arghasarkar/alexa-train-times-alexa-bug/issues"
+  },
+  "homepage": "https://github.com/arghasarkar/alexa-train-times-alexa-bug#readme",
+  "dependencies": {
+    "ask-sdk": "^2.7.0",
+    "ask-sdk-core": "^2.7.0",
+    "sync-request": "^6.1.0"
+  }
+}

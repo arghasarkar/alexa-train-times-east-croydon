@@ -1,0 +1,6 @@
+node_modules
+.idea
+skill.zip
+
+# API secrets
+transport_api/apiKeys.js

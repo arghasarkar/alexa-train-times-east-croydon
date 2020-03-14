@@ -1,0 +1,42 @@
+{
+    "interactionModel": {
+    "languageModel": {
+        "invocationName": "train time",
+            "intents": [
+            {
+                "name": "AMAZON.CancelIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.HelpIntent",
+                "samples": []
+            },
+            {
+                "name": "AMAZON.StopIntent",
+                "samples": []
+            },
+            {
+                "name": "HelloWorldIntent",
+                "slots": [
+                    {
+                        "name": "open",
+                        "type": "AMAZON.Actor"
+                    }
+                ],
+                "samples": [
+                    "when",
+                    "next train",
+                    "train times",
+                    "times",
+                    "open"
+                ]
+            },
+            {
+                "name": "AMAZON.NavigateHomeIntent",
+                "samples": []
+            }
+        ],
+            "types": []
+    }
+}
+}
