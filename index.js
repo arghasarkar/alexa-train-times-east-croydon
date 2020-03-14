@@ -1,5 +1,9 @@
 const Alexa = require('ask-sdk-core');
+
+// Destinations
 const workTrain = require("./transport_api/ecr2bug");
+const vicTrain = require("./transport_api/ecr2vic");
+
 // const request = require("sync-request");
 
 const LaunchRequestHandler = {
@@ -22,7 +26,7 @@ const Ecr2VicIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'EcrToVicIntent';
     },
     handle(handlerInput) {
-        let speechText = workTrain.speechText();
+        let speechText = vicTrain.speechText();
 
         return handlerInput.responseBuilder
             .speak(speechText)
