@@ -14,6 +14,10 @@ const generateSpeechText = (ORIGIN_CODE, DESTINATION_CODE) => {
     let response = request("GET", URL).getBody("utf8");
     let body = JSON.parse(response);
 
+    if (length(body.departures.all) === 0) {
+        return noTrainsAvailableSpeechGenerator(ORIGIN, DESTINATION);
+    }
+
     let nextTrain = body.departures.all[0];
     let platform = nextTrain.platform;
     let departureTime = nextTrain.expected_departure_time;
@@ -21,9 +25,19 @@ const generateSpeechText = (ORIGIN_CODE, DESTINATION_CODE) => {
     let finalDestination = nextTrain.destination_name;
     let operator = nextTrain.operator_name;
 
-    let speechText = `The next train from ${ORIGIN} to ${DESTINATION} departs at ${departureTime} from platform number ${platform}. The departure status is ${status}. Train operator is ${operator}`;
-
-    return speechText;
+    return nextTrainSpeechGenerator(ORIGIN, DESTINATION, departureTime, platform, status, operator);
 };
+
+// Speech generator when there are no trains available
+const noTrainsAvailableSpeechGenerator = (ORIGIN, DESTINATION) => {
+    return `There are no live trains available between ${ORIGIN} and ${DESTINATION} at this moment.`;
+};
+
+// Speech generator for the next train
+const nextTrainSpeechGenerator = (ORIGIN, DESTINATION, departureTime, platform, status, operator) => {
+    return `The next train from ${ORIGIN} to ${DESTINATION} departs at ${departureTime} from platform number ` +
+    `${platform}. The departure status is ${status}. Train operator is ${operator}`;
+};
+
 
 exports.singleTrainSpeechBuilder = generateSpeechText;
