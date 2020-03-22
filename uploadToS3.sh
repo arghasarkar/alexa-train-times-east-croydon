@@ -12,7 +12,7 @@ function putS3
   path=$1
   file=$2
   aws_path=$3
-  bucket='my-aws-bucket'
+  bucket=$4
   date=$(date +"%a, %d %b %Y %T %z")
   acl="x-amz-acl:public-read"
   content_type='application/x-compressed-tar'
@@ -28,5 +28,5 @@ function putS3
 }
 
 for file in "$path"/*; do
-  putS3 "$path" "${file##*/}" "/path/on/s3/to/files/"
+  putS3 "$path" "${file##*/}" https://s3.console.aws.amazon.com/s3/buckets/alexatrainsecrtobug/""
 done
