@@ -4,3 +4,6 @@ skill.zip
 
 # API secrets
 transport_api/apiKeys.js
+
+# AWS Credentials
+awsCreds.sh
