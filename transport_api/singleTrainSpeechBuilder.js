@@ -14,7 +14,7 @@ const generateSpeechText = (ORIGIN_CODE, DESTINATION_CODE) => {
     let response = request("GET", URL).getBody("utf8");
     let body = JSON.parse(response);
 
-    if (length(body.departures.all) === 0) {
+    if (body.departures.all.length === 0) {
         return noTrainsAvailableSpeechGenerator(ORIGIN, DESTINATION);
     }
 
